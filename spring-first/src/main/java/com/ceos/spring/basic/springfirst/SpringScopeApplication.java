@@ -1,0 +1,29 @@
+package com.ceos.spring.basic.springfirst;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.ceos.spring.basic.springfirst.scope.PersonDAO;
+
+@SpringBootApplication
+public class SpringScopeApplication {
+
+  private static Logger LOGGER = LoggerFactory.getLogger(SpringScopeApplication.class);
+
+  public static void main(String[] args) {
+
+    ApplicationContext applicationContext =  SpringApplication.run(SpringBasicApplication.class, args);
+
+    PersonDAO personDao = applicationContext.getBean(PersonDAO.class);
+    PersonDAO personDao1 = applicationContext.getBean(PersonDAO.class);
+
+    LOGGER.info("{}", personDao);
+    LOGGER.info("{}", personDao.getJdbcConnection());
+
+    LOGGER.info("{}", personDao1);
+    LOGGER.info("{}", personDao1.getJdbcConnection());
+  }
+}
