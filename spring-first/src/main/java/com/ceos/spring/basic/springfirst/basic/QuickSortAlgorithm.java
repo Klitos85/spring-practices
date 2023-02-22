@@ -1,4 +1,4 @@
-package com.ceos.spring.basic.springfirst;
+package com.ceos.spring.basic.springfirst.basic;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
