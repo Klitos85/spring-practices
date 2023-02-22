@@ -15,6 +15,10 @@ public class SpringFirstApplication {
     ApplicationContext applicationContext =  SpringApplication.run(SpringFirstApplication.class, args);
 
     BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+    BinarySearchImpl binarySearch1 = applicationContext.getBean(BinarySearchImpl.class);
+
+    System.out.println(binarySearch);
+    System.out.println(binarySearch1);
     
     int result = binarySearch.binarySearch(new int[] { 124, 6 }, 3);
     System.out.println("Result: " + result);
